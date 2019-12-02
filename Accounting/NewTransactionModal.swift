@@ -51,15 +51,6 @@ struct NewTransactionModal: View {
                         }
                     }
                     Section(header: Text("Select transaction category:")) {
-//                        Picker(selection: $categoryIndex, label: Text("Category")) {
-////                            List(self.categories.filter{ $0.category.contains(self.categorySearch) }.count, id: \.id) {
-////                                Text($0.category)
-////                            }
-//
-//                            ForEach(0..<self.categories.count, id: \.self) {
-//                                Text("\(self.categories[$0].category)").tag($0)
-//                            }
-//                        }
                         NavigationLink(destination: CategoryPickerView(categories: self.categories, category: self.category, onSelect: { cat in
                             self.category = cat
                         })) {
@@ -80,12 +71,9 @@ struct NewTransactionModal: View {
                     }
                     
                     Section(header: Text("Transaction note:")) {
-                        MultilineTextView(text: $comment, placeholderText: "Note")
-                        .frame(numLines: 5)
-//                            .border(Color.gray.opacity(0.5), width: 1)
-//                        TextField("Note", text: $comment)
-//                        .keyboardType(.asciiCapable)
-//                        .lineLimit(nil)
+                        TextField("Note", text: $comment)
+                        .keyboardType(.asciiCapable)
+                        .lineLimit(nil)
                     }
                     
                 }
@@ -100,7 +88,6 @@ struct NewTransactionModal: View {
                 }.padding(.init(top: 16, leading: 0, bottom: 16, trailing: 16))
                 }, trailing: HStack {
                     Button(action: {
-//                        self.category = self.categories[self.categoryIndex]
                         let generator = UIImpactFeedbackGenerator(style: .light)
                         generator.prepare()
                         generator.impactOccurred()
