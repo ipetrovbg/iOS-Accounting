@@ -26,6 +26,7 @@
 		D188EE4C238C6CA70094A08F /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188EE4B238C6CA70094A08F /* CategoryPickerView.swift */; };
 		D188EE4E238F161D0094A08F /* CardsRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188EE4D238F161D0094A08F /* CardsRoundedView.swift */; };
 		D188EE522395BCA70094A08F /* MultilineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188EE512395BCA60094A08F /* MultilineTextView.swift */; };
+		D188EE54239EFD2D0094A08F /* Accounting in Resources */ = {isa = PBXBuildFile; fileRef = D188EE53239EFD2D0094A08F /* Accounting */; };
 		D198B96D236CA14A0030DED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B96C236CA14A0030DED1 /* AppDelegate.swift */; };
 		D198B96F236CA14A0030DED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B96E236CA14A0030DED1 /* SceneDelegate.swift */; };
 		D198B972236CA14A0030DED1 /* Accounting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D198B970236CA14A0030DED1 /* Accounting.xcdatamodeld */; };
@@ -64,6 +65,7 @@
 		D188EE4B238C6CA70094A08F /* CategoryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerView.swift; sourceTree = "<group>"; };
 		D188EE4D238F161D0094A08F /* CardsRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRoundedView.swift; sourceTree = "<group>"; };
 		D188EE512395BCA60094A08F /* MultilineTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultilineTextView.swift; sourceTree = "<group>"; };
+		D188EE53239EFD2D0094A08F /* Accounting */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Accounting; sourceTree = "<group>"; };
 		D198B969236CA14A0030DED1 /* Accounting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accounting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D198B96C236CA14A0030DED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D198B96E236CA14A0030DED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				D188EE4B238C6CA70094A08F /* CategoryPickerView.swift */,
 				D188EE4D238F161D0094A08F /* CardsRoundedView.swift */,
 				D188EE512395BCA60094A08F /* MultilineTextView.swift */,
+				D188EE53239EFD2D0094A08F /* Accounting */,
 			);
 			path = Accounting;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D198B97C236CA14D0030DED1 /* LaunchScreen.storyboard in Resources */,
+				D188EE54239EFD2D0094A08F /* Accounting in Resources */,
 				D198B979236CA14D0030DED1 /* Preview Assets.xcassets in Resources */,
 				D198B976236CA14D0030DED1 /* Assets.xcassets in Resources */,
 			);
