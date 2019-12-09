@@ -10,18 +10,18 @@ import SwiftUI
 
 struct BudgetView: View {
     var body: some View {
-//        ZStack {
-//            VStack {
-//                HStack {
-//                    Text("Coming soon...")
-//                        .font(.largeTitle)
-//                        .fontWeight(.black)
-//                        .foregroundColor(Color("primary"))
-//                }
-//            }
-//            
-//        }
-        CardsRoundedView()
+        ZStack {
+            VStack {
+                HStack {
+                    Text("Coming soon...")
+                        .font(.largeTitle)
+                        .fontWeight(.black)
+                        .foregroundColor(Color("primary"))
+                }
+            }
+            
+        }
+//        CardsRoundedView()
     }
 }
 

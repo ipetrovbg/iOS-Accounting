@@ -9,15 +9,22 @@
 import SwiftUI
 
 struct ScrollRow: View {
-    var index: Int
+    var transaction: Transaction
+    var account: Account
     var body: some View {
-        HStack {
-            Text("Some text \(index)")
-        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 80)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-            .padding(.all, 5)
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(Color.white)
+                .shadow(radius: 1, y: 1)
+                .frame(width: UIScreen.main.bounds.width - 32, height: 65)
+                    
+            HStack {
+                TransactionRow(transaction: transaction, account: account)
+                .padding()
+            }
+        }
+        .padding([.leading, .trailing])
+        
         
     }
 }
@@ -25,7 +32,6 @@ struct ScrollRow: View {
 struct Header: View {
     var text: Text
     var minHeight: CGFloat = 200
-    var fixedPosition: Bool = false
     
     var body: some View {
         ZStack {
@@ -50,7 +56,7 @@ struct MyText: View {
     @Binding var scroll: Double
     @Binding var fixed: Bool
     var body: some View {
-        self.fixed = Double(self.minY.frame(in: .global).minY) <= 170
+        self.fixed = Double(self.minY.frame(in: .global).minY) <= 150
         return Text("")
     }
 }
@@ -58,66 +64,33 @@ struct MyText: View {
 struct CardsRoundedView: View {
     @State var fixed: Bool = false
     @State var scroll: Double = 0
+    var transactions: [Transaction] = []
+    var account: Account
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ZStack {
-                Header(
-                    text: Text("Header")
-                        .font(.largeTitle),
-                    minHeight: fixed ? 150 : 250,
-                    fixedPosition: fixed
-                ).shadow(radius: 5)
+                AccountCard(
+                    account: account, daysToSalary: 5, minHeight: fixed ? 150 : 200, isSmall: self.fixed)
             }.zIndex(2)
-                     ScrollView {
-                        GeometryReader { geo in
-                            MyText(minY: geo, scroll: self.$scroll, fixed: self.$fixed)
-                        }
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0.1)
-                        .zIndex(1)
-                        
-
-                        
-                        Group {
-                            ScrollRow(index: 1)
-                            ScrollRow(index: 2)
-                            ScrollRow(index: 3)
-                            ScrollRow(index: 4)
-                            ScrollRow(index: 5)
-                            ScrollRow(index: 6)
-                            ScrollRow(index: 7)
-                            ScrollRow(index: 8)
-                            ScrollRow(index: 9)
-                            ScrollRow(index: 10)
-                        }.zIndex(0)
-                        Group {
-                            ScrollRow(index: 11)
-                            ScrollRow(index: 12)
-                            ScrollRow(index: 13)
-                            ScrollRow(index: 14)
-                        }.zIndex(0)
-                    }
+            ScrollView {
+                GeometryReader { geo in
+                    MyText(minY: geo, scroll: self.$scroll, fixed: self.$fixed)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0.1, maxHeight: 0.1)
+                .zIndex(1)
+                
+                ForEach(self.transactions) { transaction in
+                    ScrollRow(transaction: transaction, account: self.account)
+                }
+            }.padding(.bottom)
         }.onAppear {
             self.fixed = false
         }
-        
-//        ZStack {
-//            Rectangle()
-//                .fill(Color.blue)
-//                .cornerRadius(40)
-//            List {
-//                ForEach(0..<3) { index in
-//                    Text("Some text \(index)")
-//                        .background(Color.clear)
-//                }
-//            }.padding(50)
-//            .listStyle(GroupedListStyle())
-//
-//        }
     }
 }
 
 struct CardsRoundedView_Previews: PreviewProvider {
     static var previews: some View {
-        CardsRoundedView()
+        CardsRoundedView(transactions: [Transaction(comment: "Some comment", simulation: true, date: "22.3.2019", id: 8, amount: 45.7, originalAmount: 45.7, currencyId: 23, userId: 7, type: "withdrawal", accountId: 8, category: Category(id: 9, category: "Food"), createdAt: "22.3.2019"), Transaction(comment: "Some comment", simulation: true, date: "22.3.2019", id: 9, amount: 45.7, originalAmount: 45.7, currencyId: 23, userId: 7, type: "withdrawal", accountId: 8, category: Category(id: 9, category: "Food"), createdAt: "22.3.2019")], account: Account(id: 9, name: "Main", amount: 45.7, currencyId: 9, currency: Currency(id: 8, sign: "BGN", currency: "Bulgarian Lev", country: "Bulgaria")))
     }
 }

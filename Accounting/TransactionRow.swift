@@ -28,7 +28,7 @@ struct TransactionRow: View {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
-    
+
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -37,26 +37,27 @@ struct TransactionRow: View {
 
     var body: some View {
         HStack {
-            ZStack {
-                Rectangle()
-//                    .fill(LinearGradient(
-//                        gradient: .init(colors: [.red, .blue]),
-//                        startPoint: .init(x: 0.5, y: 0),
-//                        endPoint: .init(x: 0.5, y: 0.5)
-//                    ))
-                    .foregroundColor(.clear)
-                    .background(LinearGradient(gradient:  Gradient(colors: [Color("second"), Color("first")]), startPoint: .top, endPoint: .bottom))
-                    .frame(width: 50, height: 50)
-                    .clipShape(RoundedRectangle(cornerRadius: 3))
-                Image(systemName: "dollarsign.circle")
-                .resizable()
-                .frame(width: 25, height: 25)
-                .foregroundColor(.white)
-            }
+//            ZStack {
+//                Rectangle()
+////                    .fill(LinearGradient(
+////                        gradient: .init(colors: [.red, .blue]),
+////                        startPoint: .init(x: 0.5, y: 0),
+////                        endPoint: .init(x: 0.5, y: 0.5)
+////                    ))
+//                    .foregroundColor(.clear)
+//                    .background(LinearGradient(gradient:  Gradient(colors: [Color("second"), Color("first")]), startPoint: .top, endPoint: .bottom))
+//                    .frame(width: 50, height: 50)
+//                    .clipShape(RoundedRectangle(cornerRadius: 3))
+//                Image(systemName: "dollarsign.circle")
+//                .resizable()
+//                .frame(width: 25, height: 25)
+//                .foregroundColor(.white)
+//            }
             HStack {
                 HStack {
                     VStack(alignment: .leading) {
                         Text(self.transaction.comment ?? "")
+                        .lineLimit(1)
                             .padding(.bottom, 5)
                         Text(self.transaction.category?.category ?? "")
                             .font(.system(size: 10))
@@ -80,7 +81,7 @@ struct TransactionRow: View {
                     }
                     .padding(.bottom, 5)
                     HStack {
-                        Text("\(self.transaction.createdAt.toDate(), formatter: Self.stringFormatter)")
+                        Text("\(self.transaction.createdAt.toDate(), formatter: TransactionRow.stringFormatter)")
                             .font(.system(size: 10))
                     }
                 }
@@ -90,8 +91,8 @@ struct TransactionRow: View {
     }
 }
 
-//struct TransactionRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TransactionRow(transaction: .init(comment: "Transaction Comment", simulation: true, date: "\(Date())", id: 1, amount: 6.6, originalAmount: 6.6, currencyId: 0, userId: 0, type: "withdrawal", accountId: 0, category: Category(id: 0, category: "Food")), account: Account(id: 0, name: "Main", amount: 0, currencyId: 0, currency: Currency(id: 0, sign: "BGN", currency: "Bulgarian Lev", country: "Bulgaria")))
-//    }
-//}
+struct TransactionRow_Previews: PreviewProvider {
+    static var previews: some View {
+        TransactionRow(transaction: Transaction(comment: "Some comment", simulation: true, date: "23/09/2019", id: 6, amount: 45, originalAmount: 45, currencyId: 5, userId: 7, type: "withdrawal", accountId: 5, category: Category(id: 9, category: "Food"), createdAt: "23/04/2019"), account: Account(id: 9, name: "Main", amount: 78, currencyId: 4, currency: Currency(id: 9, sign: "BGN", currency: "Bulgarian Lev", country: "Bulgaria")))
+    }
+}
