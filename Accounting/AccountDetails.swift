@@ -12,7 +12,7 @@ struct AccountDetails: View {
     var account: Account
     @State var isAddPresented: Bool = false
     @State var fullScreen: Bool = false
-    @Environment(\.viewController) private var viewControllerHolder: UIViewController
+    @Environment(\.viewController) var viewControllerHolder
     @State var transactions = [Transaction]()
     @State var daysToSalary: Int = 0
     @EnvironmentObject var store: Store

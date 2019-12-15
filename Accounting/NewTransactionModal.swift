@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NewTransactionModal: View {
-    @Environment(\.viewController) private var viewControllerHolder: UIViewController
+    @Environment(\.viewController) private var viewControllerHolder
     
     @Binding var isPresented: Bool
     @State var isCategoryPresented: Bool = false
