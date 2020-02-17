@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import WatchConnectivity
 
 public class AccountService {
     

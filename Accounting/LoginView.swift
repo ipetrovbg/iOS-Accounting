@@ -11,6 +11,8 @@ import LocalAuthentication
 
 struct LoginView: View {
     @State var user: UserModel = UserModel(email: "", password: "")
+    @EnvironmentObject var store: Store
+    
     @ObservedObject var accountModel = AccountViewModel()
     @Binding var isPresented: Bool
     @State var error: Bool = false
@@ -20,96 +22,101 @@ struct LoginView: View {
     var didLogin: (Bool) -> ()
     
     var body: some View {
-        NavigationView {
-            KeyboardHost{
-                VStack() {
-                    Form() {
-                        Section {
-                            if self.error {
-                                
-                                Text("Incorrect Email or Password. Try again")
-                                
+        LoadingView(isShowing: .constant(self.store.loading)) {
+            NavigationView {
+                KeyboardHost{
+                    VStack() {
+                        Form() {
+                            Section {
+                                if self.error {
+                                    
+                                    Text("Incorrect Email or Password. Try again")
+                                    
+                                }
+                            }
+                            
+                            Section {
+                                TextField("Email", text: self.$user.email)
+                                    .keyboardType(.emailAddress)
+                                SecureField("Password", text: self.$user.password)
                             }
                         }
+    //                    .onAppear(perform: self.authentication)
                         
-                        Section {
-                            TextField("Email", text: $user.email)
-                                .keyboardType(.emailAddress)
-                            SecureField("Password", text: $user.password)
-                        }
-                    }
-//                    .onAppear(perform: self.authentication)
-                    
-                    VStack {
-                        if biometrics {
-                            Button(action: {
-                                self.authentication()
-                            }) {
-                                Image(systemName: "faceid")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(self.biometrics ? Color.blue : Color.gray)
+                        VStack {
+                            if self.biometrics {
+                                Button(action: {
+                                    self.authentication()
+                                }) {
+                                    Image(systemName: "faceid")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                        .foregroundColor(self.biometrics ? Color.blue : Color.gray)
+                                }
                             }
-                        }
-                       
-                        
-                        HStack {
-                            Button(action: {
-                                self.doLogin()
-                                
-                            }) {
-                                Spacer()
-                                Text("Log in")
-                                    .fontWeight(.bold)
-                                Spacer()
-                            }
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(10)
-                            .actionSheet(isPresented: $showBimetricsConfirmAlert) {
-                                ActionSheet(
-                                    title: Text("Confirmation"),
-                                    message: Text("Do you want to use FaceID/TouchID to LogIn?"),
-                                    buttons: [
-                                        .default(Text("OK")) {
-                                            let defaults = UserDefaults.standard
-                                            defaults.set(self.user.email, forKey: "email")
-                                            defaults.set(self.user.password, forKey: "password")
+                           
+                            
+                            HStack {
+                                Button(action: {
+                                    self.doLogin()
+                                    
+                                }) {
+                                    Spacer()
+                                    Text("Log in")
+                                        .fontWeight(.bold)
+                                    Spacer()
+                                }
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(10)
+                                .actionSheet(isPresented: self.$showBimetricsConfirmAlert) {
+                                    ActionSheet(
+                                        title: Text("Confirmation"),
+                                        message: Text("Do you want to use FaceID/TouchID to LogIn?"),
+                                        buttons: [
+                                            .default(Text("OK")) {
+                                                let defaults = UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")!
+                                                defaults.set(self.user.email, forKey: "email")
+                                                defaults.set(self.user.password, forKey: "password")
 
-                                            self.error = false
-                                            self.accountModel.isLogged = true
-                                            self.isPresented = false
-                                            self.didLogin(true)
-                                        },
-                                        .cancel {
-                                            self.error = false
-                                            self.accountModel.isLogged = true
-                                            self.isPresented = false
-                                            self.didLogin(true)
-                                        }
-                                    ]
-                                )
+                                                self.error = false
+                                                self.accountModel.isLogged = true
+                                                self.isPresented = false
+                                                self.didLogin(true)
+                                            },
+                                            .cancel {
+                                                self.error = false
+                                                self.accountModel.isLogged = true
+                                                self.isPresented = false
+                                                self.didLogin(true)
+                                            }
+                                        ]
+                                    )
+                                }
                             }
-                        }
-                        .padding()
-                    }.onAppear(perform: haveBiometrics)
-                }.navigationBarTitle("Log in")
+                            .padding()
+                        }.onAppear(perform: self.haveBiometrics)
+                    }.navigationBarTitle("Log in")
+                }
+                
             }
-            
         }
     }
     
     func doLogin() {
+        self.store.loading.toggle()
         LoginService().doLogin(user: self.user) { (err, user) in
             if (err) {
                 withAnimation {
                     self.error = err
+                    self.store.loading.toggle()
                 }
                 return
             }
             
             if self.biometrics && self.loginWithBiometrics == false {
+                self.error = false
                  self.user = user
                 self.showBimetricsConfirmAlert.toggle()
             } else {
@@ -120,6 +127,7 @@ struct LoginView: View {
                 
                 self.didLogin(true)
             }
+            self.store.loading.toggle()
             
         }
     }
@@ -146,7 +154,7 @@ struct LoginView: View {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authError in
                 if success {
                     
-                    let defaults = UserDefaults.standard
+                    let defaults = UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")!
                     
                     if let email = defaults.string(forKey: "email") {
                         self.loginWithBiometrics = true

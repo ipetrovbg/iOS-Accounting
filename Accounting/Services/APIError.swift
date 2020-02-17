@@ -16,3 +16,8 @@ public enum APIError: Error {
     case decodeError
     case unauthorize
 }
+
+public enum WatchCommunicationActionTypes {
+    case authenticationAction
+    case accounts
+}

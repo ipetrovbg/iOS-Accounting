@@ -8,14 +8,39 @@
 
 import UIKit
 import CoreData
+import WatchConnectivity
+import SocketIO
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+         let manager = SocketManager(socketURL: URL(string: "ancient-fjord-87958.herokuapp.com")!, config: [.log(true), .compress])
+            
+           let socket = manager.defaultSocket
+
+                           socket.on(clientEvent: .connect) {data, ack in
+                               print("socket connected")
+                           }
+
+                           socket.on("REFRESH_TOKEN_RESULT") {data, ack in
+                               print(data)
+                   //            guard let cur = data[0] as? Double else { return }
+                   //
+                   //            socket.emitWithAck("canUpdate", cur).timingOut(after: 0) {data in
+                   //                socket.emit("update", ["amount": cur + 2.50])
+                   //            }
+                   //
+                   //            ack.with("Got your currentAmount", "dude")
+                           }
+                           socket.emit("REFRESH_TOKEN")
+                           socket.connect()
+        
+        let _ = WatchManager.shared
         return true
     }
 
@@ -79,4 +104,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

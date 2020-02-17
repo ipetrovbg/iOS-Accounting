@@ -3,86 +3,153 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D105F5C22377F84B009FF485 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105F5C12377F84B009FF485 /* Transaction.swift */; };
-		D105F5C42377F8BD009FF485 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105F5C32377F8BD009FF485 /* TransactionService.swift */; };
-		D105F5C6237A005F009FF485 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105F5C5237A005F009FF485 /* SettingsView.swift */; };
-		D1305857237DD2E3008C1876 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1305856237DD2E3008C1876 /* TransactionRow.swift */; };
-		D130585A237FEE3F008C1876 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1305859237FEE3F008C1876 /* Store.swift */; };
-		D130585C238021C2008C1876 /* AccountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130585B238021C2008C1876 /* AccountCard.swift */; };
-		D138A96923720410008F0335 /* NewTransactionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D138A96823720410008F0335 /* NewTransactionModal.swift */; };
-		D138A96B23720975008F0335 /* CategoryChooseModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D138A96A23720975008F0335 /* CategoryChooseModal.swift */; };
-		D138A96D2373DC49008F0335 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D138A96C2373DC49008F0335 /* AccountView.swift */; };
-		D138A96F2373DC63008F0335 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D138A96E2373DC63008F0335 /* BudgetView.swift */; };
-		D138A9712376A936008F0335 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D138A9702376A936008F0335 /* CategoryService.swift */; };
-		D138A9732376A960008F0335 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D138A9722376A960008F0335 /* Category.swift */; };
-		D138A9752376ACBB008F0335 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D138A9742376ACBB008F0335 /* APIError.swift */; };
-		D15ED1C52380629400978DEF /* AccountsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15ED1C42380629400978DEF /* AccountsScrollView.swift */; };
-		D15ED1C7238082F600978DEF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15ED1C6238082F600978DEF /* LoadingView.swift */; };
-		D15ED1C92387356C00978DEF /* KeyboardHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15ED1C82387356C00978DEF /* KeyboardHost.swift */; };
-		D188EE4C238C6CA70094A08F /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188EE4B238C6CA70094A08F /* CategoryPickerView.swift */; };
-		D188EE4E238F161D0094A08F /* CardsRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188EE4D238F161D0094A08F /* CardsRoundedView.swift */; };
-		D198B96D236CA14A0030DED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B96C236CA14A0030DED1 /* AppDelegate.swift */; };
-		D198B96F236CA14A0030DED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B96E236CA14A0030DED1 /* SceneDelegate.swift */; };
-		D198B972236CA14A0030DED1 /* Accounting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D198B970236CA14A0030DED1 /* Accounting.xcdatamodeld */; };
-		D198B974236CA14A0030DED1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B973236CA14A0030DED1 /* ContentView.swift */; };
-		D198B976236CA14D0030DED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D198B975236CA14D0030DED1 /* Assets.xcassets */; };
-		D198B979236CA14D0030DED1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D198B978236CA14D0030DED1 /* Preview Assets.xcassets */; };
-		D198B97C236CA14D0030DED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D198B97A236CA14D0030DED1 /* LaunchScreen.storyboard */; };
-		D198B985236CA1CF0030DED1 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B984236CA1CF0030DED1 /* Account.swift */; };
-		D198B987236CA1EB0030DED1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B986236CA1EB0030DED1 /* Currency.swift */; };
-		D198B98A236CA23D0030DED1 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B989236CA23D0030DED1 /* AccountsViewModel.swift */; };
-		D198B98D236CA4240030DED1 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B98C236CA4240030DED1 /* AccountService.swift */; };
-		D198B98F236CAFA80030DED1 /* AccountDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B98E236CAFA80030DED1 /* AccountDetails.swift */; };
-		D198B991236CCC4B0030DED1 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B990236CCC4B0030DED1 /* AccountResponse.swift */; };
-		D198B993236D76510030DED1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B992236D76510030DED1 /* LoginView.swift */; };
-		D198B995236DD0CC0030DED1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B994236DD0CC0030DED1 /* User.swift */; };
-		D198B997236DD4290030DED1 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B996236DD4290030DED1 /* LoginService.swift */; };
+		D10713DF23EC9EB800629FD2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D10713DD23EC9EB800629FD2 /* Interface.storyboard */; };
+		D10713E123EC9EBB00629FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D10713E023EC9EBB00629FD2 /* Assets.xcassets */; };
+		D10713E823EC9EBB00629FD2 /* Accounting WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D10713E723EC9EBB00629FD2 /* Accounting WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D10713ED23EC9EBB00629FD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10713EC23EC9EBB00629FD2 /* ContentView.swift */; };
+		D10713EF23EC9EBB00629FD2 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10713EE23EC9EBB00629FD2 /* HostingController.swift */; };
+		D10713F123EC9EBB00629FD2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10713F023EC9EBB00629FD2 /* ExtensionDelegate.swift */; };
+		D10713F323EC9EBC00629FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D10713F223EC9EBC00629FD2 /* Assets.xcassets */; };
+		D10713F623EC9EBC00629FD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D10713F523EC9EBC00629FD2 /* Preview Assets.xcassets */; };
+		D10713FA23EC9EBC00629FD2 /* Accounting WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D10713DB23EC9EB800629FD2 /* Accounting WatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D107140523EC9F3500629FD2 /* AccountsViewWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107140423EC9F3500629FD2 /* AccountsViewWatch.swift */; };
+		D170519523F07D8100186E40 /* AccountDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170519423F07D8100186E40 /* AccountDetails.swift */; };
+		D1CF8FF623FAFB94007AFC7A /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; };
+		D1CF8FF723FAFB9F007AFC7A /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; };
+		D1CF8FFC23FAFBE9007AFC7A /* (null) in CopyFiles */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D10713E923EC9EBB00629FD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D198B961236CA14A0030DED1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D10713E623EC9EBB00629FD2;
+			remoteInfo = "Accounting WatchApp Extension";
+		};
+		D10713F823EC9EBC00629FD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D198B961236CA14A0030DED1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D10713DA23EC9EB800629FD2;
+			remoteInfo = "Accounting WatchApp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D10713BD23EC898D00629FD2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D10713FA23EC9EBC00629FD2 /* Accounting WatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D10713FE23EC9EBC00629FD2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D10713E823EC9EBB00629FD2 /* Accounting WatchApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1CF8FD823FA61D9007AFC7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		D1CF8FEB23FAF675007AFC7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				D1CF8FF623FAFB94007AFC7A /* (null) in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1CF8FF223FAF67E007AFC7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D1CF8FF723FAFB9F007AFC7A /* (null) in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		D1CF8FF323FAFB1F007AFC7A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		D1CF8FFB23FAFBDC007AFC7A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D1CF8FFC23FAFBE9007AFC7A /* (null) in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		D105F5C12377F84B009FF485 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		D105F5C32377F8BD009FF485 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
-		D105F5C5237A005F009FF485 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		D1305856237DD2E3008C1876 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
-		D1305859237FEE3F008C1876 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		D130585B238021C2008C1876 /* AccountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCard.swift; sourceTree = "<group>"; };
-		D138A96823720410008F0335 /* NewTransactionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionModal.swift; sourceTree = "<group>"; };
-		D138A96A23720975008F0335 /* CategoryChooseModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChooseModal.swift; sourceTree = "<group>"; };
-		D138A96C2373DC49008F0335 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		D138A96E2373DC63008F0335 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
-		D138A9702376A936008F0335 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
-		D138A9722376A960008F0335 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		D138A9742376ACBB008F0335 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		D15ED1C42380629400978DEF /* AccountsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScrollView.swift; sourceTree = "<group>"; };
-		D15ED1C6238082F600978DEF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		D15ED1C82387356C00978DEF /* KeyboardHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHost.swift; sourceTree = "<group>"; };
-		D188EE4B238C6CA70094A08F /* CategoryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerView.swift; sourceTree = "<group>"; };
-		D188EE4D238F161D0094A08F /* CardsRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRoundedView.swift; sourceTree = "<group>"; };
+		D10713DB23EC9EB800629FD2 /* Accounting WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Accounting WatchApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D10713DE23EC9EB800629FD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D10713E023EC9EBB00629FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D10713E223EC9EBB00629FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D10713E723EC9EBB00629FD2 /* Accounting WatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Accounting WatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D10713EC23EC9EBB00629FD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D10713EE23EC9EBB00629FD2 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		D10713F023EC9EBB00629FD2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		D10713F223EC9EBC00629FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D10713F523EC9EBC00629FD2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D10713F723EC9EBC00629FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D107140223EC9EE800629FD2 /* Accounting WatchApp ExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Accounting WatchApp ExtensionRelease.entitlements"; sourceTree = "<group>"; };
+		D107140323EC9EF200629FD2 /* Accounting WatchAppRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Accounting WatchAppRelease.entitlements"; sourceTree = "<group>"; };
+		D107140423EC9F3500629FD2 /* AccountsViewWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewWatch.swift; sourceTree = "<group>"; };
+		D170519423F07D8100186E40 /* AccountDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetails.swift; sourceTree = "<group>"; };
 		D198B969236CA14A0030DED1 /* Accounting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accounting.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D198B96C236CA14A0030DED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D198B96E236CA14A0030DED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D198B971236CA14A0030DED1 /* Accounting.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Accounting.xcdatamodel; sourceTree = "<group>"; };
-		D198B973236CA14A0030DED1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D198B975236CA14D0030DED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D198B978236CA14D0030DED1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D198B97B236CA14D0030DED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D198B97D236CA14D0030DED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D198B984236CA1CF0030DED1 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		D198B986236CA1EB0030DED1 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		D198B989236CA23D0030DED1 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
-		D198B98C236CA4240030DED1 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
-		D198B98E236CAFA80030DED1 /* AccountDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetails.swift; sourceTree = "<group>"; };
-		D198B990236CCC4B0030DED1 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
-		D198B992236D76510030DED1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		D198B994236DD0CC0030DED1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D198B996236DD4290030DED1 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5829B4ACD9D6768844CCF334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D10713E423EC9EBB00629FD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D198B966236CA14A0030DED1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,19 +160,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D1305858237FEE2B008C1876 /* Store */ = {
+		D10713DC23EC9EB800629FD2 /* Accounting WatchApp */ = {
 			isa = PBXGroup;
 			children = (
-				D1305859237FEE3F008C1876 /* Store.swift */,
+				D107140323EC9EF200629FD2 /* Accounting WatchAppRelease.entitlements */,
+				D10713DD23EC9EB800629FD2 /* Interface.storyboard */,
+				D10713E023EC9EBB00629FD2 /* Assets.xcassets */,
+				D10713E223EC9EBB00629FD2 /* Info.plist */,
 			);
-			path = Store;
+			path = "Accounting WatchApp";
+			sourceTree = "<group>";
+		};
+		D10713EB23EC9EBB00629FD2 /* Accounting WatchApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D107140223EC9EE800629FD2 /* Accounting WatchApp ExtensionRelease.entitlements */,
+				D10713EC23EC9EBB00629FD2 /* ContentView.swift */,
+				D10713EE23EC9EBB00629FD2 /* HostingController.swift */,
+				D10713F023EC9EBB00629FD2 /* ExtensionDelegate.swift */,
+				D10713F223EC9EBC00629FD2 /* Assets.xcassets */,
+				D10713F723EC9EBC00629FD2 /* Info.plist */,
+				D10713F423EC9EBC00629FD2 /* Preview Content */,
+				D107140423EC9F3500629FD2 /* AccountsViewWatch.swift */,
+				D170519423F07D8100186E40 /* AccountDetails.swift */,
+			);
+			path = "Accounting WatchApp Extension";
+			sourceTree = "<group>";
+		};
+		D10713F423EC9EBC00629FD2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D10713F523EC9EBC00629FD2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		D198B960236CA14A0030DED1 = {
 			isa = PBXGroup;
 			children = (
-				D198B96B236CA14A0030DED1 /* Accounting */,
+				D10713DC23EC9EB800629FD2 /* Accounting WatchApp */,
+				D10713EB23EC9EBB00629FD2 /* Accounting WatchApp Extension */,
 				D198B96A236CA14A0030DED1 /* Products */,
+				D1CF8FDE23FAF444007AFC7A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,98 +209,77 @@
 			isa = PBXGroup;
 			children = (
 				D198B969236CA14A0030DED1 /* Accounting.app */,
+				D10713DB23EC9EB800629FD2 /* Accounting WatchApp.app */,
+				D10713E723EC9EBB00629FD2 /* Accounting WatchApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D198B96B236CA14A0030DED1 /* Accounting */ = {
+		D1CF8FDE23FAF444007AFC7A /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				D1305858237FEE2B008C1876 /* Store */,
-				D198B98B236CA4140030DED1 /* Services */,
-				D198B988236CA21B0030DED1 /* ViewModels */,
-				D198B983236CA1AC0030DED1 /* Models */,
-				D198B96C236CA14A0030DED1 /* AppDelegate.swift */,
-				D198B96E236CA14A0030DED1 /* SceneDelegate.swift */,
-				D198B973236CA14A0030DED1 /* ContentView.swift */,
-				D198B98E236CAFA80030DED1 /* AccountDetails.swift */,
-				D198B992236D76510030DED1 /* LoginView.swift */,
-				D138A96823720410008F0335 /* NewTransactionModal.swift */,
-				D138A96A23720975008F0335 /* CategoryChooseModal.swift */,
-				D138A96C2373DC49008F0335 /* AccountView.swift */,
-				D138A96E2373DC63008F0335 /* BudgetView.swift */,
-				D105F5C5237A005F009FF485 /* SettingsView.swift */,
-				D198B975236CA14D0030DED1 /* Assets.xcassets */,
-				D198B97A236CA14D0030DED1 /* LaunchScreen.storyboard */,
-				D198B97D236CA14D0030DED1 /* Info.plist */,
-				D198B970236CA14A0030DED1 /* Accounting.xcdatamodeld */,
-				D198B977236CA14D0030DED1 /* Preview Content */,
-				D1305856237DD2E3008C1876 /* TransactionRow.swift */,
-				D130585B238021C2008C1876 /* AccountCard.swift */,
-				D15ED1C42380629400978DEF /* AccountsScrollView.swift */,
-				D15ED1C6238082F600978DEF /* LoadingView.swift */,
-				D188EE4B238C6CA70094A08F /* CategoryPickerView.swift */,
-				D188EE4D238F161D0094A08F /* CardsRoundedView.swift */,
 			);
-			path = Accounting;
-			sourceTree = "<group>";
-		};
-		D198B977236CA14D0030DED1 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				D198B978236CA14D0030DED1 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		D198B983236CA1AC0030DED1 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D198B984236CA1CF0030DED1 /* Account.swift */,
-				D198B986236CA1EB0030DED1 /* Currency.swift */,
-				D198B990236CCC4B0030DED1 /* AccountResponse.swift */,
-				D198B994236DD0CC0030DED1 /* User.swift */,
-				D138A9722376A960008F0335 /* Category.swift */,
-				D105F5C12377F84B009FF485 /* Transaction.swift */,
-				D15ED1C82387356C00978DEF /* KeyboardHost.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		D198B988236CA21B0030DED1 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				D198B989236CA23D0030DED1 /* AccountsViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		D198B98B236CA4140030DED1 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D198B98C236CA4240030DED1 /* AccountService.swift */,
-				D198B996236DD4290030DED1 /* LoginService.swift */,
-				D138A9702376A936008F0335 /* CategoryService.swift */,
-				D138A9742376ACBB008F0335 /* APIError.swift */,
-				D105F5C32377F8BD009FF485 /* TransactionService.swift */,
-			);
-			path = Services;
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D198B968236CA14A0030DED1 /* Accounting */ = {
+		D10713DA23EC9EB800629FD2 /* Accounting WatchApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D198B980236CA14D0030DED1 /* Build configuration list for PBXNativeTarget "Accounting" */;
+			buildConfigurationList = D10713FF23EC9EBC00629FD2 /* Build configuration list for PBXNativeTarget "Accounting WatchApp" */;
 			buildPhases = (
-				D198B965236CA14A0030DED1 /* Sources */,
-				D198B966236CA14A0030DED1 /* Frameworks */,
-				D198B967236CA14A0030DED1 /* Resources */,
+				D10713D923EC9EB800629FD2 /* Resources */,
+				D10713FE23EC9EBC00629FD2 /* Embed App Extensions */,
+				5829B4ACD9D6768844CCF334 /* Frameworks */,
+				D1CF8FEB23FAF675007AFC7A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D10713EA23EC9EBB00629FD2 /* PBXTargetDependency */,
+			);
+			name = "Accounting WatchApp";
+			productName = "Accounting WatchApp";
+			productReference = D10713DB23EC9EB800629FD2 /* Accounting WatchApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		D10713E623EC9EBB00629FD2 /* Accounting WatchApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D10713FB23EC9EBC00629FD2 /* Build configuration list for PBXNativeTarget "Accounting WatchApp Extension" */;
+			buildPhases = (
+				D10713E323EC9EBB00629FD2 /* Sources */,
+				D10713E423EC9EBB00629FD2 /* Frameworks */,
+				D10713E523EC9EBB00629FD2 /* Resources */,
+				D1CF8FF223FAF67E007AFC7A /* Embed Frameworks */,
+				D1CF8FFB23FAFBDC007AFC7A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Accounting WatchApp Extension";
+			productName = "Accounting WatchApp Extension";
+			productReference = D10713E723EC9EBB00629FD2 /* Accounting WatchApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		D198B968236CA14A0030DED1 /* Accounting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D198B980236CA14D0030DED1 /* Build configuration list for PBXNativeTarget "Accounting" */;
+			buildPhases = (
+				95B7403C6AE017756D6D7367 /* [CP] Check Pods Manifest.lock */,
+				D198B965236CA14A0030DED1 /* Sources */,
+				D198B966236CA14A0030DED1 /* Frameworks */,
+				D198B967236CA14A0030DED1 /* Resources */,
+				D10713BD23EC898D00629FD2 /* Embed Watch Content */,
+				D1CF8FD823FA61D9007AFC7A /* Embed Frameworks */,
+				D52EFD2D04CA297ED9738298 /* [CP] Embed Pods Frameworks */,
+				D1CF8FF323FAFB1F007AFC7A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D10713F923EC9EBC00629FD2 /* PBXTargetDependency */,
 			);
 			name = Accounting;
 			productName = Accounting;
@@ -217,10 +292,16 @@
 		D198B961236CA14A0030DED1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Petar Petrov";
 				TargetAttributes = {
+					D10713DA23EC9EB800629FD2 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					D10713E623EC9EBB00629FD2 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					D198B968236CA14A0030DED1 = {
 						CreatedOnToolsVersion = 11.2;
 					};
@@ -240,76 +321,231 @@
 			projectRoot = "";
 			targets = (
 				D198B968236CA14A0030DED1 /* Accounting */,
+				D10713DA23EC9EB800629FD2 /* Accounting WatchApp */,
+				D10713E623EC9EBB00629FD2 /* Accounting WatchApp Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D10713D923EC9EB800629FD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D10713E123EC9EBB00629FD2 /* Assets.xcassets in Resources */,
+				D10713DF23EC9EB800629FD2 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D10713E523EC9EBB00629FD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D10713F623EC9EBC00629FD2 /* Preview Assets.xcassets in Resources */,
+				D10713F323EC9EBC00629FD2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D198B967236CA14A0030DED1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D198B97C236CA14D0030DED1 /* LaunchScreen.storyboard in Resources */,
-				D198B979236CA14D0030DED1 /* Preview Assets.xcassets in Resources */,
-				D198B976236CA14D0030DED1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		95B7403C6AE017756D6D7367 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Accounting-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D52EFD2D04CA297ED9738298 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Accounting/Pods-Accounting-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Accounting/Pods-Accounting-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Accounting/Pods-Accounting-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		D10713E323EC9EBB00629FD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D170519523F07D8100186E40 /* AccountDetails.swift in Sources */,
+				D10713EF23EC9EBB00629FD2 /* HostingController.swift in Sources */,
+				D10713ED23EC9EBB00629FD2 /* ContentView.swift in Sources */,
+				D107140523EC9F3500629FD2 /* AccountsViewWatch.swift in Sources */,
+				D10713F123EC9EBB00629FD2 /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D198B965236CA14A0030DED1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D198B987236CA1EB0030DED1 /* Currency.swift in Sources */,
-				D198B997236DD4290030DED1 /* LoginService.swift in Sources */,
-				D138A9732376A960008F0335 /* Category.swift in Sources */,
-				D198B985236CA1CF0030DED1 /* Account.swift in Sources */,
-				D138A9712376A936008F0335 /* CategoryService.swift in Sources */,
-				D15ED1C7238082F600978DEF /* LoadingView.swift in Sources */,
-				D130585A237FEE3F008C1876 /* Store.swift in Sources */,
-				D198B991236CCC4B0030DED1 /* AccountResponse.swift in Sources */,
-				D105F5C42377F8BD009FF485 /* TransactionService.swift in Sources */,
-				D188EE4E238F161D0094A08F /* CardsRoundedView.swift in Sources */,
-				D138A96D2373DC49008F0335 /* AccountView.swift in Sources */,
-				D105F5C6237A005F009FF485 /* SettingsView.swift in Sources */,
-				D138A96F2373DC63008F0335 /* BudgetView.swift in Sources */,
-				D198B98F236CAFA80030DED1 /* AccountDetails.swift in Sources */,
-				D198B96D236CA14A0030DED1 /* AppDelegate.swift in Sources */,
-				D15ED1C92387356C00978DEF /* KeyboardHost.swift in Sources */,
-				D198B96F236CA14A0030DED1 /* SceneDelegate.swift in Sources */,
-				D198B974236CA14A0030DED1 /* ContentView.swift in Sources */,
-				D198B98D236CA4240030DED1 /* AccountService.swift in Sources */,
-				D138A9752376ACBB008F0335 /* APIError.swift in Sources */,
-				D105F5C22377F84B009FF485 /* Transaction.swift in Sources */,
-				D198B995236DD0CC0030DED1 /* User.swift in Sources */,
-				D198B993236D76510030DED1 /* LoginView.swift in Sources */,
-				D198B98A236CA23D0030DED1 /* AccountsViewModel.swift in Sources */,
-				D198B972236CA14A0030DED1 /* Accounting.xcdatamodeld in Sources */,
-				D1305857237DD2E3008C1876 /* TransactionRow.swift in Sources */,
-				D130585C238021C2008C1876 /* AccountCard.swift in Sources */,
-				D138A96B23720975008F0335 /* CategoryChooseModal.swift in Sources */,
-				D138A96923720410008F0335 /* NewTransactionModal.swift in Sources */,
-				D188EE4C238C6CA70094A08F /* CategoryPickerView.swift in Sources */,
-				D15ED1C52380629400978DEF /* AccountsScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D10713EA23EC9EBB00629FD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D10713E623EC9EBB00629FD2 /* Accounting WatchApp Extension */;
+			targetProxy = D10713E923EC9EBB00629FD2 /* PBXContainerItemProxy */;
+		};
+		D10713F923EC9EBC00629FD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D10713DA23EC9EB800629FD2 /* Accounting WatchApp */;
+			targetProxy = D10713F823EC9EBC00629FD2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		D198B97A236CA14D0030DED1 /* LaunchScreen.storyboard */ = {
+		D10713DD23EC9EB800629FD2 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D198B97B236CA14D0030DED1 /* Base */,
+				D10713DE23EC9EB800629FD2 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D10713FC23EC9EBC00629FD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_ASSET_PATHS = "\"Accounting WatchApp Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = T4FMYB4338;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Accounting WatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ipetrovbg.com.Accounting.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		D10713FD23EC9EBC00629FD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Accounting WatchApp Extension/Accounting WatchApp ExtensionRelease.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_ASSET_PATHS = "\"Accounting WatchApp Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = T4FMYB4338;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Accounting WatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ipetrovbg.com.Accounting.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		D107140023EC9EBC00629FD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = T4FMYB4338;
+				IBSC_MODULE = Accounting_WatchApp_Extension;
+				INFOPLIST_FILE = "Accounting WatchApp/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ipetrovbg.com.Accounting.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		D107140123EC9EBC00629FD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Accounting WatchApp/Accounting WatchAppRelease.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = T4FMYB4338;
+				IBSC_MODULE = Accounting_WatchApp_Extension;
+				INFOPLIST_FILE = "Accounting WatchApp/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ipetrovbg.com.Accounting.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
 		D198B97E236CA14D0030DED1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -428,7 +664,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_ASSET_PATHS = "\"Accounting/Preview Content\"";
 				DEVELOPMENT_TEAM = T4FMYB4338;
 				ENABLE_PREVIEWS = YES;
@@ -438,10 +677,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ipetrovbg-gmail.com.Accounting";
+				PRODUCT_BUNDLE_IDENTIFIER = ipetrovbg.com.Accounting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,7 +689,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Accounting/AccountingRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_ASSET_PATHS = "\"Accounting/Preview Content\"";
 				DEVELOPMENT_TEAM = T4FMYB4338;
 				ENABLE_PREVIEWS = YES;
@@ -459,16 +703,35 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ipetrovbg-gmail.com.Accounting";
+				PRODUCT_BUNDLE_IDENTIFIER = ipetrovbg.com.Accounting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D10713FB23EC9EBC00629FD2 /* Build configuration list for PBXNativeTarget "Accounting WatchApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D10713FC23EC9EBC00629FD2 /* Debug */,
+				D10713FD23EC9EBC00629FD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D10713FF23EC9EBC00629FD2 /* Build configuration list for PBXNativeTarget "Accounting WatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D107140023EC9EBC00629FD2 /* Debug */,
+				D107140123EC9EBC00629FD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D198B964236CA14A0030DED1 /* Build configuration list for PBXProject "Accounting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -488,19 +751,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D198B970236CA14A0030DED1 /* Accounting.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D198B971236CA14A0030DED1 /* Accounting.xcdatamodel */,
-			);
-			currentVersion = D198B971236CA14A0030DED1 /* Accounting.xcdatamodel */;
-			path = Accounting.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D198B961236CA14A0030DED1 /* Project object */;
 }

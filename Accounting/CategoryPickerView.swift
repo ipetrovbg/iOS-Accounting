@@ -18,11 +18,11 @@ struct CategoryPickerView: View {
     var body: some View {
         VStack {
            HStack {
-                TextField("Search", text: self.$search)
+            TextField("Search", text: self.$search)
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.gray)
-            }.padding()
-            Divider()
+            }
+           .padding()
             
             List(self.categories.filter {
                 if self.search.isEmpty {
@@ -41,11 +41,22 @@ struct CategoryPickerView: View {
                             .foregroundColor(.blue)
                     }
                 }
+                .contentShape(Rectangle())
                 .padding([.top, .bottom], 10)
                 .gesture(TapGesture().onEnded({
+                    
                     self.category = cat
-                    self.onSelect(cat)
+                    
+                    let keyWindow = UIApplication.shared.connectedScenes
+                                       .filter({$0.activationState == .foregroundActive})
+                                       .map({$0 as? UIWindowScene})
+                                       .compactMap({$0})
+                                       .first?.windows
+                                       .filter({$0.isKeyWindow}).first
+                    keyWindow!.endEditing(true)
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        self.onSelect(cat)
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }))

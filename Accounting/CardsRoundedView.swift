@@ -49,9 +49,12 @@ struct MyText: View {
     var minY: GeometryProxy
     @Binding var scroll: Double
     @Binding var fixed: Bool
+    
     var body: some View {
+        self.scroll = Double(self.minY.frame(in: .global).minY)
         self.fixed = Double(self.minY.frame(in: .global).minY) <= 170
         return Text("")
+        
     }
 }
 
@@ -68,51 +71,37 @@ struct CardsRoundedView: View {
                     fixedPosition: fixed
                 ).shadow(radius: 5)
             }.zIndex(2)
-                     ScrollView {
-                        GeometryReader { geo in
-                            MyText(minY: geo, scroll: self.$scroll, fixed: self.$fixed)
-                        }
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0.1)
-                        .zIndex(1)
-                        
-
-                        
-                        Group {
-                            ScrollRow(index: 1)
-                            ScrollRow(index: 2)
-                            ScrollRow(index: 3)
-                            ScrollRow(index: 4)
-                            ScrollRow(index: 5)
-                            ScrollRow(index: 6)
-                            ScrollRow(index: 7)
-                            ScrollRow(index: 8)
-                            ScrollRow(index: 9)
-                            ScrollRow(index: 10)
-                        }.zIndex(0)
-                        Group {
-                            ScrollRow(index: 11)
-                            ScrollRow(index: 12)
-                            ScrollRow(index: 13)
-                            ScrollRow(index: 14)
-                        }.zIndex(0)
-                    }
+            ScrollView {
+                GeometryReader { geo in
+                    MyText(minY: geo, scroll: self.$scroll, fixed: self.$fixed)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0.1)
+                .zIndex(1)
+                
+                
+                
+                Group {
+                    ScrollRow(index: 1)
+                    ScrollRow(index: 2)
+                    ScrollRow(index: 3)
+                    ScrollRow(index: 4)
+                    ScrollRow(index: 5)
+                    ScrollRow(index: 6)
+                    ScrollRow(index: 7)
+                    ScrollRow(index: 8)
+                    ScrollRow(index: 9)
+                    ScrollRow(index: 10)
+                }.zIndex(0)
+                Group {
+                    ScrollRow(index: 11)
+                    ScrollRow(index: 12)
+                    ScrollRow(index: 13)
+                    ScrollRow(index: 14)
+                }.zIndex(0)
+            }
         }.onAppear {
             self.fixed = false
         }
-        
-//        ZStack {
-//            Rectangle()
-//                .fill(Color.blue)
-//                .cornerRadius(40)
-//            List {
-//                ForEach(0..<3) { index in
-//                    Text("Some text \(index)")
-//                        .background(Color.clear)
-//                }
-//            }.padding(50)
-//            .listStyle(GroupedListStyle())
-//
-//        }
     }
 }
 
