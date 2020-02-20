@@ -41,6 +41,10 @@
 		D198B993236D76510030DED1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B992236D76510030DED1 /* LoginView.swift */; };
 		D198B995236DD0CC0030DED1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B994236DD0CC0030DED1 /* User.swift */; };
 		D198B997236DD4290030DED1 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198B996236DD4290030DED1 /* LoginService.swift */; };
+		D1CF8FFE23FB01EF007AFC7A /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF8FFD23FB01EF007AFC7A /* WatchManager.swift */; };
+		D1CF900023FB0218007AFC7A /* PopupPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF8FFF23FB0218007AFC7A /* PopupPicker.swift */; };
+		D1CF900223FB0241007AFC7A /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF900123FB0241007AFC7A /* FilterView.swift */; };
+		D1CF900423FB15CD007AFC7A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF900323FB15CD007AFC7A /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		D198B992236D76510030DED1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D198B994236DD0CC0030DED1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D198B996236DD4290030DED1 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		D1CF8FFD23FB01EF007AFC7A /* WatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchManager.swift; sourceTree = "<group>"; };
+		D1CF8FFF23FB0218007AFC7A /* PopupPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPicker.swift; sourceTree = "<group>"; };
+		D1CF900123FB0241007AFC7A /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		D1CF900323FB15CD007AFC7A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,10 @@
 				D15ED1C6238082F600978DEF /* LoadingView.swift */,
 				D188EE4B238C6CA70094A08F /* CategoryPickerView.swift */,
 				D188EE4D238F161D0094A08F /* CardsRoundedView.swift */,
+				D1CF8FFD23FB01EF007AFC7A /* WatchManager.swift */,
+				D1CF8FFF23FB0218007AFC7A /* PopupPicker.swift */,
+				D1CF900123FB0241007AFC7A /* FilterView.swift */,
+				D1CF900323FB15CD007AFC7A /* TestView.swift */,
 			);
 			path = Accounting;
 			sourceTree = "<group>";
@@ -272,6 +284,7 @@
 				D198B991236CCC4B0030DED1 /* AccountResponse.swift in Sources */,
 				D105F5C42377F8BD009FF485 /* TransactionService.swift in Sources */,
 				D188EE4E238F161D0094A08F /* CardsRoundedView.swift in Sources */,
+				D1CF900223FB0241007AFC7A /* FilterView.swift in Sources */,
 				D138A96D2373DC49008F0335 /* AccountView.swift in Sources */,
 				D105F5C6237A005F009FF485 /* SettingsView.swift in Sources */,
 				D138A96F2373DC63008F0335 /* BudgetView.swift in Sources */,
@@ -281,6 +294,8 @@
 				D198B96F236CA14A0030DED1 /* SceneDelegate.swift in Sources */,
 				D198B974236CA14A0030DED1 /* ContentView.swift in Sources */,
 				D198B98D236CA4240030DED1 /* AccountService.swift in Sources */,
+				D1CF900023FB0218007AFC7A /* PopupPicker.swift in Sources */,
+				D1CF900423FB15CD007AFC7A /* TestView.swift in Sources */,
 				D138A9752376ACBB008F0335 /* APIError.swift in Sources */,
 				D105F5C22377F84B009FF485 /* Transaction.swift in Sources */,
 				D198B995236DD0CC0030DED1 /* User.swift in Sources */,
@@ -293,6 +308,7 @@
 				D138A96923720410008F0335 /* NewTransactionModal.swift in Sources */,
 				D188EE4C238C6CA70094A08F /* CategoryPickerView.swift in Sources */,
 				D15ED1C52380629400978DEF /* AccountsScrollView.swift in Sources */,
+				D1CF8FFE23FB01EF007AFC7A /* WatchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

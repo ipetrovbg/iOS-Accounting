@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import WatchConnectivity
 
 struct SettingsView: View {
     @EnvironmentObject var store: Store
@@ -14,10 +15,10 @@ struct SettingsView: View {
     @State var loginPresented: Bool = false
     var body: some View {
         LoadingView(isShowing: .constant(self.store.loading)) {
-            VStack(spacing: 20) {
+            VStack(spacing: 20.0) {
                 if self.accountsModel.isLogged {
                     Button(action: {
-                        let defaults = UserDefaults.standard
+                        let defaults = UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")!
                         defaults.removeObject(forKey: "password")
                         defaults.removeObject(forKey: "email")
                     }) {
@@ -26,9 +27,21 @@ struct SettingsView: View {
                     }
                 }
                 Button(action: {
-                    let defaults = UserDefaults.standard
+                    let defaults = UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")!
                     defaults.set("", forKey: "token")
                     defaults.set(nil, forKey: "id")
+                    let interval = Calendar.current.dateInterval(of: .month, for: Date())
+                    defaults.set(interval?.start ?? Date() , forKey: "from")
+                    defaults.set(interval?.end ?? Date(), forKey: "to")
+                    let watchAuthDict: [String: Any] = [
+                        "type": "auth",
+                        "force_send": UUID().uuidString,
+                        "name": "",
+                        "id": 0,
+                        "token": ""
+                    ]
+                    
+                    WatchManager.shared.sendParamsToWatch(dict: watchAuthDict)
                     self.accountsModel.isLogged = false
                     self.loginPresented = true
                 }) {
@@ -36,7 +49,7 @@ struct SettingsView: View {
                 }
                 .onAppear {
                     self.store.loading = true
-                    let defaults = UserDefaults.standard
+                    let defaults = UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")!
                     if let token = defaults.string(forKey: "token") {
                         AccountService().getAccounts(token: token) { accounts, error in
                             self.accountsModel.isLogged = !(error == .unauthorize)
@@ -60,7 +73,7 @@ struct SettingsView: View {
                             self.loginPresented = false
                         }
                         self.accountsModel.isLogged = logged
-                    })
+                    }).environmentObject(self.store)
                 }
             }
         }

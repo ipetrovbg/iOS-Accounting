@@ -7,8 +7,20 @@
 //
 
 import Foundation
+import WatchConnectivity
 
 class LoginService {
+    
+    fileprivate func syncWithWatch() {
+        WatchManager.shared.sendParamsToWatch(dict: [
+            "type": "auth",
+            "force_send": UUID().uuidString,
+            "name": "",
+            "id": 0,
+            "token": ""
+        ])
+    }
+    
     func doLogin(user: UserModel, completion: @escaping (_ error: Bool, _ user: UserModel) -> Void) {
         let url = URL(string: "https://ancient-fjord-87958.herokuapp.com/api/v1/authenticate")! //change the url
         let parameters = ["email": user.email, "password": user.password]
@@ -35,6 +47,7 @@ class LoginService {
             
             guard let data = data else {
                 DispatchQueue.main.async {
+                    self.syncWithWatch()
                     completion(true, UserModel(email: "", password: ""))
                 }
                 return
@@ -44,35 +57,52 @@ class LoginService {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     if (json["success"] as! Int != 0) {
                         if let userJSON = json["user"] as? [String: Any], let email = userJSON["email"] as? String {
-                            let defaults = UserDefaults.standard
+                            let defaults = UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")!
                             defaults.set(userJSON["id"], forKey: "id")
+                            defaults.set(userJSON["name"], forKey: "name")
+                            defaults.synchronize()
+                            print(defaults.string(forKey: "name") ?? "nil")
+                            if let token = json["token"] as? String {
+                                defaults.set(token, forKey: "token")
+                                defaults.synchronize()
+                            }
+                            WatchManager.shared.sendParamsToWatch(dict: [
+                                "type": "auth",
+                                "force_send": UUID().uuidString,
+                                "name": userJSON["name"] ?? "",
+                                "id": userJSON["id"] ?? "",
+                                "token": json["token"] ?? ""
+                            ])
                             DispatchQueue.main.async {
                                 completion(false, UserModel(email: email, password: user.password))
                             }
-                        }
-                        if let token = json["token"] as? String {
-                            let defaults = UserDefaults.standard
-                            defaults.set(token, forKey: "token")
                             
                         }
                         
+                        
+                        
                     } else {
+                        print("Login Failed")
                         DispatchQueue.main.async {
+                            self.syncWithWatch()
                             completion(true, UserModel(email: "", password: ""))
                         }
                     }
                 } else {
+                    print("Can't serialize user object")
                     DispatchQueue.main.async {
+                        self.syncWithWatch()
                         completion(true, UserModel(email: "", password: ""))
                     }
                 }
             }  catch let error {
                 print(error.localizedDescription)
                 DispatchQueue.main.async {
+                    self.syncWithWatch()
                     completion(true, UserModel(email: "", password: ""))
                 }
             }
-        })
+            })
         task.resume()
     }
 }

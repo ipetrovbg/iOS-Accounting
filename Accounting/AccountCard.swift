@@ -28,7 +28,7 @@ struct AccountCard: View {
                 Spacer()
                 Text("\(account.name)")
                     .fontWeight(.black)
-                    .font(.largeTitle)
+                    .font(.system(.largeTitle, design: .rounded))
                     .lineLimit(1)
             }
             HStack() {
@@ -47,7 +47,7 @@ struct AccountCard: View {
                 Spacer()
                 Text("\(daysToSalary) /")
                 Text(String(format: "%.2f", (account.amount / Double(daysToSalary))))
-                    .font(.largeTitle)
+                    .font(.system(.largeTitle, design: .rounded))
                     .fontWeight(.bold)
                     .lineLimit(1)
                 Text("\(account.currency.sign)")

@@ -19,7 +19,7 @@ class TransactionService {
     private var createUrl: String = "https://ancient-fjord-87958.herokuapp.com/api/v1/transaction/create"
     
     init() {
-        let defaults = UserDefaults.standard
+        let defaults = UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")!
         if let token = defaults.string(forKey: "token") {
             self.token = token
         }
@@ -53,7 +53,6 @@ class TransactionService {
                     completion(false, "Error")
                     return
                 }
-                
                 completion(true, "")
             }.resume()
             
@@ -92,9 +91,10 @@ class TransactionService {
             }
             do {
                 let values = try JSONDecoder().decode(TransactionResponse.self, from: data)
-                let defaults = UserDefaults.standard
+                let defaults = UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")!
                 defaults.set(values.token.token, forKey: "token")
                 defaults.set(values.token.userId, forKey: "id")
+                defaults.synchronize()
                 completion(.success(values))
             } catch let e {
                 print(e.localizedDescription)
@@ -104,18 +104,21 @@ class TransactionService {
     }
     
     static func calculateDayToNextSalary(_ dayToNextSalary: Int = 5) -> Int {
+        let current = Date()
+        
         let payDay = dayToNextSalary
         let calendar = Calendar.current
-        let currentDay = calendar.component(.day, from: Date())
-        let currentYear = calendar.component(.year, from: Date())
-        let currentMonth = calendar.component(.month, from: Date())
-        let inThisMonth = Calendar.current.dateInterval(of: .month, for: Date())
+        let currentDay = calendar.component(.day, from: current)
+        let currentYear = calendar.component(.year, from: current)
+        let currentMonth = calendar.component(.month, from: current)
+        let inThisMonth = Calendar.current.dateInterval(of: .month, for: current)
         let endDayOfMonth = Calendar.current.component(.day, from: inThisMonth!.end - 1)
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         let payDayDate = formatter.date(from: "\(currentYear)/\(currentMonth)/\(payDay)")
-        let dayDiff = Calendar.current.dateComponents([.day], from: payDayDate!, to: Date())
 
-        return abs(payDay > currentDay ? dayDiff.day! + 1 : (endDayOfMonth - currentDay) + payDay)
+        let dayDiff = Calendar.current.dateComponents([.day], from: current, to: payDayDate!)
+
+        return abs(payDay > currentDay ? dayDiff.day! : (endDayOfMonth - currentDay) + payDay)
     }
 }

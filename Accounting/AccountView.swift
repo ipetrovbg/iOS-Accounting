@@ -36,28 +36,32 @@ struct AccountView: View {
                                     }, content: {
                                         LoginView(isPresented: self.$isLoginPresented, didLogin: { isLogged in
                                             self.accountsModel.isLogged = isLogged
-                                        })
+                                        }).environmentObject(self.store)
                                     })
                                 } else {
                                     VStack {
                                         HStack {
-                                            Text("My Accounts")
-                                            .font(.largeTitle)
-                                            .fontWeight(.black)
-                                            .foregroundColor(Color("primary"))
+                                            //                                            Text("\(UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")?.string(forKey: "name") ?? "")")
+                                            //                                                .font(.system(.largeTitle, design: .rounded))
+                                            //                                                .fontWeight(.black)
+                                            //                                                .foregroundColor(Color("primary"))
+                                            Text("Accounts")
+                                                .font(.system(.largeTitle, design: .rounded))
+                                                .fontWeight(.black)
+                                                .foregroundColor(Color("primary"))
                                             Spacer()
                                         }
-                                        .padding()
-                                        
-                                            HStack {
-                                                Text("Cards")
-                                                    .fontWeight(.bold)
-                                                    .padding(.leading, 10)
-                                                Spacer()
-                                                Image(systemName: "creditcard.fill")
-                                                    .foregroundColor(Color("primary"))
-                                                    .padding(.trailing, 10)
-                                            }.padding()
+                                        .padding([.leading, .top])
+//                                        HStack {
+//                                            Text("Cards")
+//                                                    .font(.system(.body, design: .rounded))
+//                                                    .fontWeight(.bold)
+//                                                    .padding(.leading, 10)
+//                                                Spacer()
+//                                                Image(systemName: "creditcard.fill")
+//                                                    .foregroundColor(Color("primary"))
+//                                                    .padding(.trailing, 10)
+//                                            }.padding()
                                         
                                             List(self.accountsModel.accounts) { account in
                                                 NavigationLink(destination: AccountDetails(account: account)) {
@@ -76,9 +80,11 @@ struct AccountView: View {
                                                 .background(Color.blue.opacity(0.07))
                                                 .cornerRadius(10)
                                             }
+                                        Spacer()
                                     }
                                 }
-                            }.navigationBarHidden(true)
+                                Spacer()
+                            }
                             
                         } else {
                             VStack {
@@ -95,21 +101,21 @@ struct AccountView: View {
                                     LoginView(isPresented: self.$isLoginPresented, didLogin: { isLogged in
                                         self.accountsModel.isLogged = isLogged
                                         if (isLogged) {
-                                            if let token = UserDefaults.standard.string(forKey: "token") {
+                                            if let token = UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")?.string(forKey: "token") {
                                                 self.accountsModel.fetchAccounts(token: token) {
                                                     self.isLoginPresented = true
                                                 }
                                             }
                                         }
                                         
-                                    })
+                                    }).environmentObject(self.store)
                                 })
-                            }.navigationBarHidden(true)
+                            }
                         }
                     }
                     .onAppear {
                         self.store.loading = true
-                        let defaults = UserDefaults.standard
+                        let defaults = UserDefaults(suiteName: "group.com.Accounting.Watch.app.defaults")!
                         if let token = defaults.string(forKey: "token") {
                             if (!token.isEmpty) {
                                 AccountService().getAccounts(token: token) { response, error in
@@ -136,8 +142,10 @@ struct AccountView: View {
                             self.store.loading = false
                         }
                     }
+                    .navigationBarHidden(true)
+                    .navigationBarTitle("", displayMode: .inline)
                 }
-            .navigationBarHidden(true)
+            
         }
         
     }
@@ -146,5 +154,6 @@ struct AccountView: View {
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
         AccountView()
+        .environmentObject(Store())
     }
 }

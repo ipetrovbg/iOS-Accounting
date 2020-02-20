@@ -20,10 +20,10 @@ struct ContentView: View {
                     Text("Accounts")
             }.tag("Accounts")
             
-             BudgetView()
-                .tabItem {
-                   Text("Budgets")
-            }.tag("Budgets")
+//             BudgetView()
+//                .tabItem {
+//                   Text("Budgets")
+//            }.tag("Budgets")
             
             SettingsView()
                 .tabItem{

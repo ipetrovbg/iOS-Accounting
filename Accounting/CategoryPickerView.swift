@@ -13,15 +13,22 @@ struct CategoryPickerView: View {
     var categories: [Category] = []
     @State var search: String = ""
     @State var category: Category
+    @State var shouldFocus: Bool = false
      var onSelect: (Category) -> ()
     
     var body: some View {
         VStack {
-           HStack {
+            HStack {
                 TextField("Search", text: self.$search)
+            Button(action: {
+                UIApplication.shared.sendAction(#selector(UIView.endEditing(_:)), to:nil, from:nil, for:nil)
+            }) {
                 Image(systemName: "magnifyingglass")
-                    .foregroundColor(.gray)
+                .foregroundColor(.gray)
             }.padding()
+            }
+           .frame(maxHeight: 70)
+           .padding()
             Divider()
             
             List(self.categories.filter {
@@ -42,29 +49,29 @@ struct CategoryPickerView: View {
                     }
                 }
                 .padding([.top, .bottom], 10)
+                .contentShape(Rectangle())
                 .gesture(TapGesture().onEnded({
+                    UIApplication.shared.sendAction(#selector(UIView.endEditing(_:)), to:nil, from:nil, for:nil)
                     self.category = cat
-                    self.onSelect(cat)
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }
+                    self.presentationMode.wrappedValue.dismiss()
+                   self.onSelect(cat)
                 }))
             }
         }
     }
 }
 
-//struct CategoryPickerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CategoryPickerView(categories: [
-//            Category(id: 9, category: "Food"),
-//            Category(id: 8, category: "Salary"),
-//            Category(id: 2, category: "Entertainment"),
-//            Category(id: 3, category: "Bills"),
-//            Category(id: 44, category: "Unknown"),
-//            Category(id: 32, category: "Abonaments"),
-//            Category(id: 7, category: "Clothes"),
-//            Category(id: 5, category: "Tech")
-//        ], category: Category(id: 9, category: "Food"), onSelect: {_ in })
-//    }
-//}
+struct CategoryPickerView_Previews: PreviewProvider {
+    static var previews: some View {
+        CategoryPickerView(categories: [
+            Category(id: 9, category: "Food"),
+            Category(id: 8, category: "Salary"),
+            Category(id: 2, category: "Entertainment"),
+            Category(id: 3, category: "Bills"),
+            Category(id: 44, category: "Unknown"),
+            Category(id: 32, category: "Abonaments"),
+            Category(id: 7, category: "Clothes"),
+            Category(id: 5, category: "Tech")
+        ], category: Category(id: 9, category: "Food"), onSelect: {_ in })
+    }
+}

@@ -37,9 +37,10 @@ class Transaction: Codable, Identifiable {
     var userId: Int?
     var type: String?
     var accountId: Int?
+    var DeviceToken: String?
     var category: Category?
     
-    init(comment: String, simulation: Bool?, date: String?, id: Int?, amount: Double?, originalAmount: Double?, currencyId: Int?, userId: Int?, type: String?, accountId: Int?, category: Category?, createdAt: String) {
+    init(comment: String, simulation: Bool?, date: String?, id: Int?, amount: Double?, originalAmount: Double?, currencyId: Int?, userId: Int?, type: String?, accountId: Int?, category: Category?, createdAt: String, DeviceToken: String?) {
         self.comment = comment
         self.simulation = simulation ?? true
         self.date = date
@@ -52,6 +53,10 @@ class Transaction: Codable, Identifiable {
         self.accountId = accountId ?? nil
         self.category = category
         self.createdAt = createdAt
+        self.DeviceToken = DeviceToken
+        if DeviceToken == nil {
+            self.DeviceToken = ""
+        }
         guard category != nil else {
             self.categoryId = 0
             return
